@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ASSIGNMENT2" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\ASSIGNMENT2.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ASSIGNMENT2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BANK_ACCOUNT" Member="BANK_ACCOUNTs">
+    <Type Name="BANK_ACCOUNT">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACCOUNTID" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ACCOUNTTYPE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BALANCE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="BANK_ACCOUNT_BANK_TRANSACTION" Member="BANK_TRANSACTIONs" ThisKey="ID" OtherKey="ACCOUNTID" Type="BANK_TRANSACTION" />
+      <Association Name="USER_ACCOUNT_BANK_ACCOUNT" Member="USER_ACCOUNT" ThisKey="USERID" OtherKey="USERID" Type="USER_ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USER_QUSTN_LST" Member="USER_QUSTN_LSTs">
+    <Type Name="USER_QUSTN_LST">
+      <Column Name="QUESTIONID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="QUESTION" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="USER_QUSTN_LST_USER_QA_TB" Member="USER_QA_TBs" ThisKey="QUESTIONID" OtherKey="QUESTIONID" Type="USER_QA_TB" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USER_QA_TB" Member="USER_QA_TBs">
+    <Type Name="USER_QA_TB">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="QUESTIONID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ANSWER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="USER_QUSTN_LST_USER_QA_TB" Member="USER_QUSTN_LST" ThisKey="QUESTIONID" OtherKey="QUESTIONID" Type="USER_QUSTN_LST" IsForeignKey="true" />
+      <Association Name="USER_ACCOUNT_USER_QA_TB" Member="USER_ACCOUNT" ThisKey="USERID" OtherKey="USERID" Type="USER_ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USER_ACCOUNT" Member="USER_ACCOUNTs">
+    <Type Name="USER_ACCOUNT">
+      <Column Name="USERID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USERNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FIRSTNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LASTNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PASSWORD" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ISACTIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="USER_ACCOUNT_BANK_ACCOUNT" Member="BANK_ACCOUNTs" ThisKey="USERID" OtherKey="USERID" Type="BANK_ACCOUNT" />
+      <Association Name="USER_ACCOUNT_USER_QA_TB" Member="USER_QA_TBs" ThisKey="USERID" OtherKey="USERID" Type="USER_QA_TB" />
+      <Association Name="USER_ACCOUNT_BANK_TRANSACTION" Member="BANK_TRANSACTIONs" ThisKey="USERID" OtherKey="USERID" Type="BANK_TRANSACTION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BANK_TRANSACTION" Member="BANK_TRANSACTIONs">
+    <Type Name="BANK_TRANSACTION">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="USERID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ACCOUNTID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TRANSACTIONTYPE" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MEMODESCRIPTION" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CREATEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="BANK_ACCOUNT_BANK_TRANSACTION" Member="BANK_ACCOUNT" ThisKey="ACCOUNTID" OtherKey="ID" Type="BANK_ACCOUNT" IsForeignKey="true" />
+      <Association Name="USER_ACCOUNT_BANK_TRANSACTION" Member="USER_ACCOUNT" ThisKey="USERID" OtherKey="USERID" Type="USER_ACCOUNT" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
