@@ -747,7 +747,6 @@ Partial Public Class USER_ACCOUNT
             End If
         End Set
     End Property
-
     <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FIRSTNAME", DbType:="VarChar(50)")>
     Public Property FIRSTNAME() As String
         Get
