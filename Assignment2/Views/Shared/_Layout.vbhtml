@@ -7,8 +7,12 @@
 	<link href="~/Content/Home.css" rel="stylesheet" type="text/css" />
 	<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+	<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	<script src="~/Scripts/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 	<script src="~/Scripts/modernizr-2.6.2.js"></script>
-
+	
 </head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
@@ -29,12 +33,7 @@
 
 	<div class="container body-content">
 		@RenderBody()
-		<footer class="headerfooter">
-			<hr />
-			<p>&copy; M.R Banking App -  @DateTime.Now.Year </p>
-		</footer>
 	</div>
-	<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-	<script src="~/Scripts/bootstrap.min.js"></script>
+	
 </body>
 </html>

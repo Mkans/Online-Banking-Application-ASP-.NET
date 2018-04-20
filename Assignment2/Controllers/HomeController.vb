@@ -40,6 +40,7 @@ Namespace Controllers
                 Dim sQuestion As String = collection("secQuestion").ToString
                 Dim sAnswer As String = collection("secanswer").ToString
                 Dim accType As String = collection("accType").ToString
+
                 Return RedirectToAction("Index")
             Catch
                 Return View()
@@ -65,11 +66,11 @@ Namespace Controllers
                 Try
                     Dim username As String = collection("username").ToString
                     Dim password As String = collection("password").ToString
-                    'Dim questions = From ques In allquestion.USER_QUSTN_LSTs Select ques
                     Dim result = (From u In dataContext.USER_ACCOUNTs Select u Where u.USERNAME = username And u.PASSWORD = password).FirstOrDefault
                     Dim user As USER_ACCOUNT = New USER_ACCOUNT
                     If IsNothing(result) Then
                         ModelState.AddModelError("error", "Invalid username/password. You have " & (3 - loginAttempt) & " left")
+                        Return View("Index")
                     Else
                         'Get only the details that're already in the application ie no password and security answer
                         user.FIRSTNAME = result.FIRSTNAME
@@ -88,8 +89,9 @@ Namespace Controllers
                             data.QUESTION = q.QUESTION
                         Next
                         ViewData("securityQuestion") = data.QUESTION
+                        Session("IsValidUser") = True
+                        Return View("Security")
                     End If
-                    Return View("Security")
                 Catch ex As Exception
                     ModelState.AddModelError("error", ex.Message)
                     Return View("Index")
@@ -98,6 +100,40 @@ Namespace Controllers
         End Function
 
         Public Function Security(ByVal collection As FormCollection) As ActionResult
+            Dim securityAttempt As Integer
+            Dim user As USER_ACCOUNT = New USER_ACCOUNT
+            user = Session("user")
+            Try
+                If Int(Session("securityAttempt")) >= 1 Then
+                    securityAttempt = Session("securityAttempt")
+                    securityAttempt = securityAttempt + 1
+                    Session("securityAttempt") = securityAttempt
+                End If
+            Catch ex As Exception
+                securityAttempt = 1
+                Session("securityAttempt") = securityAttempt
+            End Try
+            If securityAttempt > 2 Then
+                ModelState.AddModelError("error", "You failed 3 times. Your account has been locked.")
+                Return View("Index")
+            Else
+                Try
+                    Dim userAnswer = collection("answer").ToString
+                    Dim correctAnswer = (From a In dataContext.USER_QA_TBs
+                                         Where a.USERID = user.USERID And a.ANSWER = userAnswer
+                                         Select a.USERID).Any()
+                    If correctAnswer Then
+                        Session("IsUserActive") = True
+                        Return RedirectToAction("Index", "User")
+                    Else
+                        ModelState.AddModelError("error", "Invalid answer. You have " & (3 - securityAttempt) & "tries left")
+                        Return View()
+                    End If
+
+                Catch ex As Exception
+
+                End Try
+            End If
             Return View("Index")
         End Function
     End Class

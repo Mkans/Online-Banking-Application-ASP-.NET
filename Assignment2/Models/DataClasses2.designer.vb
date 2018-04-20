@@ -22,128 +22,128 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="ASSIGNMENT2")>
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="ASSIGNMENT2")>  _
 Partial Public Class DataClasses2DataContext
-    Inherits System.Data.Linq.DataContext
-
-    Private Shared mappingSource As System.Data.Linq.Mapping.MappingSource = New AttributeMappingSource()
-
-#Region "Extensibility Method Definitions"
-    Partial Private Sub OnCreated()
+	Inherits System.Data.Linq.DataContext
+	
+	Private Shared mappingSource As System.Data.Linq.Mapping.MappingSource = New AttributeMappingSource()
+	
+  #Region "Extensibility Method Definitions"
+  Partial Private Sub OnCreated()
+  End Sub
+  Partial Private Sub InsertBANK_ACCOUNT(instance As BANK_ACCOUNT)
     End Sub
-    Partial Private Sub InsertBANK_ACCOUNT(instance As BANK_ACCOUNT)
+  Partial Private Sub UpdateBANK_ACCOUNT(instance As BANK_ACCOUNT)
     End Sub
-    Partial Private Sub UpdateBANK_ACCOUNT(instance As BANK_ACCOUNT)
+  Partial Private Sub DeleteBANK_ACCOUNT(instance As BANK_ACCOUNT)
     End Sub
-    Partial Private Sub DeleteBANK_ACCOUNT(instance As BANK_ACCOUNT)
+  Partial Private Sub InsertBANK_TRANSACTION(instance As BANK_TRANSACTION)
     End Sub
-    Partial Private Sub InsertBANK_TRANSACTION(instance As BANK_TRANSACTION)
+  Partial Private Sub UpdateBANK_TRANSACTION(instance As BANK_TRANSACTION)
     End Sub
-    Partial Private Sub UpdateBANK_TRANSACTION(instance As BANK_TRANSACTION)
+  Partial Private Sub DeleteBANK_TRANSACTION(instance As BANK_TRANSACTION)
     End Sub
-    Partial Private Sub DeleteBANK_TRANSACTION(instance As BANK_TRANSACTION)
+  Partial Private Sub InsertUSER_ACCOUNT(instance As USER_ACCOUNT)
     End Sub
-    Partial Private Sub InsertUSER_ACCOUNT(instance As USER_ACCOUNT)
+  Partial Private Sub UpdateUSER_ACCOUNT(instance As USER_ACCOUNT)
     End Sub
-    Partial Private Sub UpdateUSER_ACCOUNT(instance As USER_ACCOUNT)
+  Partial Private Sub DeleteUSER_ACCOUNT(instance As USER_ACCOUNT)
     End Sub
-    Partial Private Sub DeleteUSER_ACCOUNT(instance As USER_ACCOUNT)
+  Partial Private Sub InsertUSER_QA_TB(instance As USER_QA_TB)
     End Sub
-    Partial Private Sub InsertUSER_QA_TB(instance As USER_QA_TB)
+  Partial Private Sub UpdateUSER_QA_TB(instance As USER_QA_TB)
     End Sub
-    Partial Private Sub UpdateUSER_QA_TB(instance As USER_QA_TB)
+  Partial Private Sub DeleteUSER_QA_TB(instance As USER_QA_TB)
     End Sub
-    Partial Private Sub DeleteUSER_QA_TB(instance As USER_QA_TB)
+  Partial Private Sub InsertUSER_QUSTN_LST(instance As USER_QUSTN_LST)
     End Sub
-    Partial Private Sub InsertUSER_QUSTN_LST(instance As USER_QUSTN_LST)
+  Partial Private Sub UpdateUSER_QUSTN_LST(instance As USER_QUSTN_LST)
     End Sub
-    Partial Private Sub UpdateUSER_QUSTN_LST(instance As USER_QUSTN_LST)
+  Partial Private Sub DeleteUSER_QUSTN_LST(instance As USER_QUSTN_LST)
     End Sub
-    Partial Private Sub DeleteUSER_QUSTN_LST(instance As USER_QUSTN_LST)
-    End Sub
-#End Region
-
-    Public Sub New()
-        MyBase.New(Global.System.Configuration.ConfigurationManager.ConnectionStrings("ASSIGNMENT2ConnectionString").ConnectionString, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As String)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As System.Data.IDbConnection)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As String, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public Sub New(ByVal connection As System.Data.IDbConnection, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
-        MyBase.New(connection, mappingSource)
-        OnCreated()
-    End Sub
-
-    Public ReadOnly Property BANK_ACCOUNTs() As System.Data.Linq.Table(Of BANK_ACCOUNT)
-        Get
-            Return Me.GetTable(Of BANK_ACCOUNT)
-        End Get
-    End Property
-
-    Public ReadOnly Property BANK_TRANSACTIONs() As System.Data.Linq.Table(Of BANK_TRANSACTION)
-        Get
-            Return Me.GetTable(Of BANK_TRANSACTION)
-        End Get
-    End Property
-
-    Public ReadOnly Property USER_ACCOUNTs() As System.Data.Linq.Table(Of USER_ACCOUNT)
-        Get
-            Return Me.GetTable(Of USER_ACCOUNT)
-        End Get
-    End Property
-
-    Public ReadOnly Property USER_QA_TBs() As System.Data.Linq.Table(Of USER_QA_TB)
-        Get
-            Return Me.GetTable(Of USER_QA_TB)
-        End Get
-    End Property
-
-    Public ReadOnly Property USER_QUSTN_LSTs() As System.Data.Linq.Table(Of USER_QUSTN_LST)
-        Get
-            Return Me.GetTable(Of USER_QUSTN_LST)
-        End Get
-    End Property
+  #End Region
+	
+	Public Sub New()
+		MyBase.New(Global.System.Configuration.ConfigurationManager.ConnectionStrings("ASSIGNMENT2ConnectionString").ConnectionString, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As String)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As System.Data.IDbConnection)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As String, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public Sub New(ByVal connection As System.Data.IDbConnection, ByVal mappingSource As System.Data.Linq.Mapping.MappingSource)
+		MyBase.New(connection, mappingSource)
+		OnCreated
+	End Sub
+	
+	Public ReadOnly Property BANK_ACCOUNTs() As System.Data.Linq.Table(Of BANK_ACCOUNT)
+		Get
+			Return Me.GetTable(Of BANK_ACCOUNT)
+		End Get
+	End Property
+	
+	Public ReadOnly Property BANK_TRANSACTIONs() As System.Data.Linq.Table(Of BANK_TRANSACTION)
+		Get
+			Return Me.GetTable(Of BANK_TRANSACTION)
+		End Get
+	End Property
+	
+	Public ReadOnly Property USER_ACCOUNTs() As System.Data.Linq.Table(Of USER_ACCOUNT)
+		Get
+			Return Me.GetTable(Of USER_ACCOUNT)
+		End Get
+	End Property
+	
+	Public ReadOnly Property USER_QA_TBs() As System.Data.Linq.Table(Of USER_QA_TB)
+		Get
+			Return Me.GetTable(Of USER_QA_TB)
+		End Get
+	End Property
+	
+	Public ReadOnly Property USER_QUSTN_LSTs() As System.Data.Linq.Table(Of USER_QUSTN_LST)
+		Get
+			Return Me.GetTable(Of USER_QUSTN_LST)
+		End Get
+	End Property
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.BANK_ACCOUNT")>
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.BANK_ACCOUNT")>  _
 Partial Public Class BANK_ACCOUNT
-    Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-
-    Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-
-    Private _ID As Integer
-
-    Private _USERID As Integer
-
-    Private _ACCOUNTID As String
-
-    Private _ACCOUNTTYPE As String
-
-    Private _BALANCE As System.Nullable(Of Integer)
-
-    Private _ISACTIVE As System.Nullable(Of Boolean)
-
-    Private _CREATEDDATE As System.Nullable(Of Date)
-
-    Private _BANK_TRANSACTIONs As EntitySet(Of BANK_TRANSACTION)
-
-    Private _USER_ACCOUNT As EntityRef(Of USER_ACCOUNT)
-
-#Region "Extensibility Method Definitions"
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _USERID As Integer
+	
+	Private _ACCOUNTID As String
+	
+	Private _ACCOUNTTYPE As String
+	
+	Private _BALANCE As System.Nullable(Of Integer)
+	
+	Private _ISACTIVE As System.Nullable(Of Boolean)
+	
+	Private _CREATEDDATE As System.Nullable(Of Date)
+	
+	Private _BANK_TRANSACTIONs As EntitySet(Of BANK_TRANSACTION)
+	
+	Private _USER_ACCOUNT As EntityRef(Of USER_ACCOUNT)
+	
+    #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
@@ -178,225 +178,224 @@ Partial Public Class BANK_ACCOUNT
     End Sub
     Partial Private Sub OnCREATEDDATEChanged()
     End Sub
-#End Region
-
-    Public Sub New()
-        MyBase.New
-        Me._BANK_TRANSACTIONs = New EntitySet(Of BANK_TRANSACTION)(AddressOf Me.attach_BANK_TRANSACTIONs, AddressOf Me.detach_BANK_TRANSACTIONs)
-        Me._USER_ACCOUNT = CType(Nothing, EntityRef(Of USER_ACCOUNT))
-        OnCreated()
-    End Sub
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", DbType:="Int NOT NULL", IsPrimaryKey:=True)>
-    Public Property ID() As Integer
-        Get
-            Return Me._ID
-        End Get
-        Set
-            If ((Me._ID = Value) _
-                        = False) Then
-                Me.OnIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ID = Value
-                Me.SendPropertyChanged("ID")
-                Me.OnIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL")>
-    Public Property USERID() As Integer
-        Get
-            Return Me._USERID
-        End Get
-        Set
-            If ((Me._USERID = Value) _
-                        = False) Then
-                If Me._USER_ACCOUNT.HasLoadedOrAssignedValue Then
-                    Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-                End If
-                Me.OnUSERIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._USERID = Value
-                Me.SendPropertyChanged("USERID")
-                Me.OnUSERIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ACCOUNTID", DbType:="VarChar(150) NOT NULL", CanBeNull:=False)>
-    Public Property ACCOUNTID() As String
-        Get
-            Return Me._ACCOUNTID
-        End Get
-        Set
-            If (String.Equals(Me._ACCOUNTID, Value) = False) Then
-                Me.OnACCOUNTIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ACCOUNTID = Value
-                Me.SendPropertyChanged("ACCOUNTID")
-                Me.OnACCOUNTIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ACCOUNTTYPE", DbType:="VarChar(10)")>
-    Public Property ACCOUNTTYPE() As String
-        Get
-            Return Me._ACCOUNTTYPE
-        End Get
-        Set
-            If (String.Equals(Me._ACCOUNTTYPE, Value) = False) Then
-                Me.OnACCOUNTTYPEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ACCOUNTTYPE = Value
-                Me.SendPropertyChanged("ACCOUNTTYPE")
-                Me.OnACCOUNTTYPEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BALANCE", DbType:="Int")>
-    Public Property BALANCE() As System.Nullable(Of Integer)
-        Get
-            Return Me._BALANCE
-        End Get
-        Set
-            If (Me._BALANCE.Equals(Value) = False) Then
-                Me.OnBALANCEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._BALANCE = Value
-                Me.SendPropertyChanged("BALANCE")
-                Me.OnBALANCEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ISACTIVE", DbType:="Bit")>
-    Public Property ISACTIVE() As System.Nullable(Of Boolean)
-        Get
-            Return Me._ISACTIVE
-        End Get
-        Set
-            If (Me._ISACTIVE.Equals(Value) = False) Then
-                Me.OnISACTIVEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ISACTIVE = Value
-                Me.SendPropertyChanged("ISACTIVE")
-                Me.OnISACTIVEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>
-    Public Property CREATEDDATE() As System.Nullable(Of Date)
-        Get
-            Return Me._CREATEDDATE
-        End Get
-        Set
-            If (Me._CREATEDDATE.Equals(Value) = False) Then
-                Me.OnCREATEDDATEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._CREATEDDATE = Value
-                Me.SendPropertyChanged("CREATEDDATE")
-                Me.OnCREATEDDATEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="BANK_ACCOUNT_BANK_TRANSACTION", Storage:="_BANK_TRANSACTIONs", ThisKey:="ID", OtherKey:="ACCOUNTID")>
-    Public Property BANK_TRANSACTIONs() As EntitySet(Of BANK_TRANSACTION)
-        Get
-            Return Me._BANK_TRANSACTIONs
-        End Get
-        Set
-            Me._BANK_TRANSACTIONs.Assign(Value)
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_ACCOUNT", Storage:="_USER_ACCOUNT", ThisKey:="USERID", OtherKey:="USERID", IsForeignKey:=True)>
-    Public Property USER_ACCOUNT() As USER_ACCOUNT
-        Get
-            Return Me._USER_ACCOUNT.Entity
-        End Get
-        Set
-            Dim previousValue As USER_ACCOUNT = Me._USER_ACCOUNT.Entity
-            If ((Object.Equals(previousValue, Value) = False) _
-                        OrElse (Me._USER_ACCOUNT.HasLoadedOrAssignedValue = False)) Then
-                Me.SendPropertyChanging()
-
-                If ((previousValue Is Nothing) _
-                            = False) Then
-                    Me._USER_ACCOUNT.Entity = Nothing
-                    previousValue.BANK_ACCOUNTs.Remove(Me)
-                End If
-                Me._USER_ACCOUNT.Entity = Value
-                If ((Value Is Nothing) _
-                            = False) Then
-                    Value.BANK_ACCOUNTs.Add(Me)
-                    Me._USERID = Value.USERID
-                Else
-                    Me._USERID = CType(Nothing, Integer)
-                End If
-                Me.SendPropertyChanged("USER_ACCOUNT")
-            End If
-        End Set
-    End Property
-
-    Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-
-    Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
-    Protected Overridable Sub SendPropertyChanging()
-        If ((Me.PropertyChangingEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-        End If
-    End Sub
-
-    Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-        If ((Me.PropertyChangedEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-        End If
-    End Sub
-
-    Private Sub attach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
-        Me.SendPropertyChanging()
-        entity.BANK_ACCOUNT = Me
-    End Sub
-
-    Private Sub detach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
-        Me.SendPropertyChanging()
-        entity.BANK_ACCOUNT = Nothing
-    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._BANK_TRANSACTIONs = New EntitySet(Of BANK_TRANSACTION)(AddressOf Me.attach_BANK_TRANSACTIONs, AddressOf Me.detach_BANK_TRANSACTIONs)
+		Me._USER_ACCOUNT = CType(Nothing, EntityRef(Of USER_ACCOUNT))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL")>  _
+	Public Property USERID() As Integer
+		Get
+			Return Me._USERID
+		End Get
+		Set
+			If ((Me._USERID = value)  _
+						= false) Then
+				If Me._USER_ACCOUNT.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUSERIDChanging(value)
+				Me.SendPropertyChanging
+				Me._USERID = value
+				Me.SendPropertyChanged("USERID")
+				Me.OnUSERIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ACCOUNTID", DbType:="VarChar(150) NOT NULL", CanBeNull:=false)>  _
+	Public Property ACCOUNTID() As String
+		Get
+			Return Me._ACCOUNTID
+		End Get
+		Set
+			If (String.Equals(Me._ACCOUNTID, value) = false) Then
+				Me.OnACCOUNTIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ACCOUNTID = value
+				Me.SendPropertyChanged("ACCOUNTID")
+				Me.OnACCOUNTIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ACCOUNTTYPE", DbType:="VarChar(10)")>  _
+	Public Property ACCOUNTTYPE() As String
+		Get
+			Return Me._ACCOUNTTYPE
+		End Get
+		Set
+			If (String.Equals(Me._ACCOUNTTYPE, value) = false) Then
+				Me.OnACCOUNTTYPEChanging(value)
+				Me.SendPropertyChanging
+				Me._ACCOUNTTYPE = value
+				Me.SendPropertyChanged("ACCOUNTTYPE")
+				Me.OnACCOUNTTYPEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_BALANCE", DbType:="Int")>  _
+	Public Property BALANCE() As System.Nullable(Of Integer)
+		Get
+			Return Me._BALANCE
+		End Get
+		Set
+			If (Me._BALANCE.Equals(value) = false) Then
+				Me.OnBALANCEChanging(value)
+				Me.SendPropertyChanging
+				Me._BALANCE = value
+				Me.SendPropertyChanged("BALANCE")
+				Me.OnBALANCEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ISACTIVE", DbType:="Bit")>  _
+	Public Property ISACTIVE() As System.Nullable(Of Boolean)
+		Get
+			Return Me._ISACTIVE
+		End Get
+		Set
+			If (Me._ISACTIVE.Equals(value) = false) Then
+				Me.OnISACTIVEChanging(value)
+				Me.SendPropertyChanging
+				Me._ISACTIVE = value
+				Me.SendPropertyChanged("ISACTIVE")
+				Me.OnISACTIVEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>  _
+	Public Property CREATEDDATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATEDDATE
+		End Get
+		Set
+			If (Me._CREATEDDATE.Equals(value) = false) Then
+				Me.OnCREATEDDATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATEDDATE = value
+				Me.SendPropertyChanged("CREATEDDATE")
+				Me.OnCREATEDDATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="BANK_ACCOUNT_BANK_TRANSACTION", Storage:="_BANK_TRANSACTIONs", ThisKey:="ID", OtherKey:="ACCOUNTID")>  _
+	Public Property BANK_TRANSACTIONs() As EntitySet(Of BANK_TRANSACTION)
+		Get
+			Return Me._BANK_TRANSACTIONs
+		End Get
+		Set
+			Me._BANK_TRANSACTIONs.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_ACCOUNT", Storage:="_USER_ACCOUNT", ThisKey:="USERID", OtherKey:="USERID", IsForeignKey:=true)>  _
+	Public Property USER_ACCOUNT() As USER_ACCOUNT
+		Get
+			Return Me._USER_ACCOUNT.Entity
+		End Get
+		Set
+			Dim previousValue As USER_ACCOUNT = Me._USER_ACCOUNT.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._USER_ACCOUNT.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._USER_ACCOUNT.Entity = Nothing
+					previousValue.BANK_ACCOUNTs.Remove(Me)
+				End If
+				Me._USER_ACCOUNT.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.BANK_ACCOUNTs.Add(Me)
+					Me._USERID = value.USERID
+				Else
+					Me._USERID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("USER_ACCOUNT")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
+		Me.SendPropertyChanging
+		entity.BANK_ACCOUNT = Me
+	End Sub
+	
+	Private Sub detach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
+		Me.SendPropertyChanging
+		entity.BANK_ACCOUNT = Nothing
+	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.BANK_TRANSACTION")>
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.BANK_TRANSACTION")>  _
 Partial Public Class BANK_TRANSACTION
-    Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-
-    Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-
-    Private _ID As Integer
-
-    Private _USERID As Integer
-
-    Private _ACCOUNTID As Integer
-
-    Private _TRANSACTIONTYPE As String
-
-    Private _AMOUNT As System.Nullable(Of Integer)
-
-    Private _MEMODESCRIPTION As String
-
-    Private _CREATEDDATE As System.Nullable(Of Date)
-
-    Private _BANK_ACCOUNT As EntityRef(Of BANK_ACCOUNT)
-
-    Private _USER_ACCOUNT As EntityRef(Of USER_ACCOUNT)
-
-#Region "Extensibility Method Definitions"
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _USERID As Integer
+	
+	Private _ACCOUNTID As Integer
+	
+	Private _TRANSACTIONTYPE As String
+	
+	Private _AMOUNT As System.Nullable(Of Integer)
+	
+	Private _MEMODESCRIPTION As String
+	
+	Private _CREATEDDATE As System.Nullable(Of Date)
+	
+	Private _BANK_ACCOUNT As EntityRef(Of BANK_ACCOUNT)
+	
+	Private _USER_ACCOUNT As EntityRef(Of USER_ACCOUNT)
+	
+    #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
@@ -431,242 +430,240 @@ Partial Public Class BANK_TRANSACTION
     End Sub
     Partial Private Sub OnCREATEDDATEChanged()
     End Sub
-#End Region
-
-    Public Sub New()
-        MyBase.New
-        Me._BANK_ACCOUNT = CType(Nothing, EntityRef(Of BANK_ACCOUNT))
-        Me._USER_ACCOUNT = CType(Nothing, EntityRef(Of USER_ACCOUNT))
-        OnCreated()
-    End Sub
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", DbType:="Int NOT NULL", IsPrimaryKey:=True)>
-    Public Property ID() As Integer
-        Get
-            Return Me._ID
-        End Get
-        Set
-            If ((Me._ID = Value) _
-                        = False) Then
-                Me.OnIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ID = Value
-                Me.SendPropertyChanged("ID")
-                Me.OnIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL")>
-    Public Property USERID() As Integer
-        Get
-            Return Me._USERID
-        End Get
-        Set
-            If ((Me._USERID = Value) _
-                        = False) Then
-                If Me._USER_ACCOUNT.HasLoadedOrAssignedValue Then
-                    Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-                End If
-                Me.OnUSERIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._USERID = Value
-                Me.SendPropertyChanged("USERID")
-                Me.OnUSERIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ACCOUNTID", DbType:="Int NOT NULL")>
-    Public Property ACCOUNTID() As Integer
-        Get
-            Return Me._ACCOUNTID
-        End Get
-        Set
-            If ((Me._ACCOUNTID = Value) _
-                        = False) Then
-                If Me._BANK_ACCOUNT.HasLoadedOrAssignedValue Then
-                    Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-                End If
-                Me.OnACCOUNTIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ACCOUNTID = Value
-                Me.SendPropertyChanged("ACCOUNTID")
-                Me.OnACCOUNTIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TRANSACTIONTYPE", DbType:="VarChar(10)")>
-    Public Property TRANSACTIONTYPE() As String
-        Get
-            Return Me._TRANSACTIONTYPE
-        End Get
-        Set
-            If (String.Equals(Me._TRANSACTIONTYPE, Value) = False) Then
-                Me.OnTRANSACTIONTYPEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._TRANSACTIONTYPE = Value
-                Me.SendPropertyChanged("TRANSACTIONTYPE")
-                Me.OnTRANSACTIONTYPEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AMOUNT", DbType:="Int")>
-    Public Property AMOUNT() As System.Nullable(Of Integer)
-        Get
-            Return Me._AMOUNT
-        End Get
-        Set
-            If (Me._AMOUNT.Equals(Value) = False) Then
-                Me.OnAMOUNTChanging(Value)
-                Me.SendPropertyChanging()
-                Me._AMOUNT = Value
-                Me.SendPropertyChanged("AMOUNT")
-                Me.OnAMOUNTChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEMODESCRIPTION", DbType:="VarChar(10)")>
-    Public Property MEMODESCRIPTION() As String
-        Get
-            Return Me._MEMODESCRIPTION
-        End Get
-        Set
-            If (String.Equals(Me._MEMODESCRIPTION, Value) = False) Then
-                Me.OnMEMODESCRIPTIONChanging(Value)
-                Me.SendPropertyChanging()
-                Me._MEMODESCRIPTION = Value
-                Me.SendPropertyChanged("MEMODESCRIPTION")
-                Me.OnMEMODESCRIPTIONChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>
-    Public Property CREATEDDATE() As System.Nullable(Of Date)
-        Get
-            Return Me._CREATEDDATE
-        End Get
-        Set
-            If (Me._CREATEDDATE.Equals(Value) = False) Then
-                Me.OnCREATEDDATEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._CREATEDDATE = Value
-                Me.SendPropertyChanged("CREATEDDATE")
-                Me.OnCREATEDDATEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="BANK_ACCOUNT_BANK_TRANSACTION", Storage:="_BANK_ACCOUNT", ThisKey:="ACCOUNTID", OtherKey:="ID", IsForeignKey:=True)>
-    Public Property BANK_ACCOUNT() As BANK_ACCOUNT
-        Get
-            Return Me._BANK_ACCOUNT.Entity
-        End Get
-        Set
-            Dim previousValue As BANK_ACCOUNT = Me._BANK_ACCOUNT.Entity
-            If ((Object.Equals(previousValue, Value) = False) _
-                        OrElse (Me._BANK_ACCOUNT.HasLoadedOrAssignedValue = False)) Then
-                Me.SendPropertyChanging()
-
-                If ((previousValue Is Nothing) _
-                            = False) Then
-                    Me._BANK_ACCOUNT.Entity = Nothing
-                    previousValue.BANK_TRANSACTIONs.Remove(Me)
-                End If
-                Me._BANK_ACCOUNT.Entity = Value
-                If ((Value Is Nothing) _
-                            = False) Then
-                    Value.BANK_TRANSACTIONs.Add(Me)
-                    Me._ACCOUNTID = Value.ID
-                Else
-                    Me._ACCOUNTID = CType(Nothing, Integer)
-                End If
-                Me.SendPropertyChanged("BANK_ACCOUNT")
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_TRANSACTION", Storage:="_USER_ACCOUNT", ThisKey:="USERID", OtherKey:="USERID", IsForeignKey:=True)>
-    Public Property USER_ACCOUNT() As USER_ACCOUNT
-        Get
-            Return Me._USER_ACCOUNT.Entity
-        End Get
-        Set
-            Dim previousValue As USER_ACCOUNT = Me._USER_ACCOUNT.Entity
-            If ((Object.Equals(previousValue, Value) = False) _
-                        OrElse (Me._USER_ACCOUNT.HasLoadedOrAssignedValue = False)) Then
-                Me.SendPropertyChanging()
-
-                If ((previousValue Is Nothing) _
-                            = False) Then
-                    Me._USER_ACCOUNT.Entity = Nothing
-                    previousValue.BANK_TRANSACTIONs.Remove(Me)
-                End If
-                Me._USER_ACCOUNT.Entity = Value
-                If ((Value Is Nothing) _
-                            = False) Then
-                    Value.BANK_TRANSACTIONs.Add(Me)
-                    Me._USERID = Value.USERID
-                Else
-                    Me._USERID = CType(Nothing, Integer)
-                End If
-                Me.SendPropertyChanged("USER_ACCOUNT")
-            End If
-        End Set
-    End Property
-
-    Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-
-    Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
-    Protected Overridable Sub SendPropertyChanging()
-        If ((Me.PropertyChangingEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-        End If
-    End Sub
-
-    Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-        If ((Me.PropertyChangedEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-        End If
-    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._BANK_ACCOUNT = CType(Nothing, EntityRef(Of BANK_ACCOUNT))
+		Me._USER_ACCOUNT = CType(Nothing, EntityRef(Of USER_ACCOUNT))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL")>  _
+	Public Property USERID() As Integer
+		Get
+			Return Me._USERID
+		End Get
+		Set
+			If ((Me._USERID = value)  _
+						= false) Then
+				If Me._USER_ACCOUNT.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUSERIDChanging(value)
+				Me.SendPropertyChanging
+				Me._USERID = value
+				Me.SendPropertyChanged("USERID")
+				Me.OnUSERIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ACCOUNTID", DbType:="Int NOT NULL")>  _
+	Public Property ACCOUNTID() As Integer
+		Get
+			Return Me._ACCOUNTID
+		End Get
+		Set
+			If ((Me._ACCOUNTID = value)  _
+						= false) Then
+				If Me._BANK_ACCOUNT.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnACCOUNTIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ACCOUNTID = value
+				Me.SendPropertyChanged("ACCOUNTID")
+				Me.OnACCOUNTIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TRANSACTIONTYPE", DbType:="VarChar(10)")>  _
+	Public Property TRANSACTIONTYPE() As String
+		Get
+			Return Me._TRANSACTIONTYPE
+		End Get
+		Set
+			If (String.Equals(Me._TRANSACTIONTYPE, value) = false) Then
+				Me.OnTRANSACTIONTYPEChanging(value)
+				Me.SendPropertyChanging
+				Me._TRANSACTIONTYPE = value
+				Me.SendPropertyChanged("TRANSACTIONTYPE")
+				Me.OnTRANSACTIONTYPEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_AMOUNT", DbType:="Int")>  _
+	Public Property AMOUNT() As System.Nullable(Of Integer)
+		Get
+			Return Me._AMOUNT
+		End Get
+		Set
+			If (Me._AMOUNT.Equals(value) = false) Then
+				Me.OnAMOUNTChanging(value)
+				Me.SendPropertyChanging
+				Me._AMOUNT = value
+				Me.SendPropertyChanged("AMOUNT")
+				Me.OnAMOUNTChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEMODESCRIPTION", DbType:="VarChar(10)")>  _
+	Public Property MEMODESCRIPTION() As String
+		Get
+			Return Me._MEMODESCRIPTION
+		End Get
+		Set
+			If (String.Equals(Me._MEMODESCRIPTION, value) = false) Then
+				Me.OnMEMODESCRIPTIONChanging(value)
+				Me.SendPropertyChanging
+				Me._MEMODESCRIPTION = value
+				Me.SendPropertyChanged("MEMODESCRIPTION")
+				Me.OnMEMODESCRIPTIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>  _
+	Public Property CREATEDDATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATEDDATE
+		End Get
+		Set
+			If (Me._CREATEDDATE.Equals(value) = false) Then
+				Me.OnCREATEDDATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATEDDATE = value
+				Me.SendPropertyChanged("CREATEDDATE")
+				Me.OnCREATEDDATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="BANK_ACCOUNT_BANK_TRANSACTION", Storage:="_BANK_ACCOUNT", ThisKey:="ACCOUNTID", OtherKey:="ID", IsForeignKey:=true)>  _
+	Public Property BANK_ACCOUNT() As BANK_ACCOUNT
+		Get
+			Return Me._BANK_ACCOUNT.Entity
+		End Get
+		Set
+			Dim previousValue As BANK_ACCOUNT = Me._BANK_ACCOUNT.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._BANK_ACCOUNT.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._BANK_ACCOUNT.Entity = Nothing
+					previousValue.BANK_TRANSACTIONs.Remove(Me)
+				End If
+				Me._BANK_ACCOUNT.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.BANK_TRANSACTIONs.Add(Me)
+					Me._ACCOUNTID = value.ID
+				Else
+					Me._ACCOUNTID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("BANK_ACCOUNT")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_TRANSACTION", Storage:="_USER_ACCOUNT", ThisKey:="USERID", OtherKey:="USERID", IsForeignKey:=true)>  _
+	Public Property USER_ACCOUNT() As USER_ACCOUNT
+		Get
+			Return Me._USER_ACCOUNT.Entity
+		End Get
+		Set
+			Dim previousValue As USER_ACCOUNT = Me._USER_ACCOUNT.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._USER_ACCOUNT.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._USER_ACCOUNT.Entity = Nothing
+					previousValue.BANK_TRANSACTIONs.Remove(Me)
+				End If
+				Me._USER_ACCOUNT.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.BANK_TRANSACTIONs.Add(Me)
+					Me._USERID = value.USERID
+				Else
+					Me._USERID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("USER_ACCOUNT")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USER_ACCOUNT")>
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USER_ACCOUNT")>  _
 Partial Public Class USER_ACCOUNT
-    Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-
-    Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-
-    Private _USERID As Integer
-
-    Private _USERNAME As String
-
-    Private _FIRSTNAME As String
-
-    Private _LASTNAME As String
-
-    Private _PASSWORD As String
-
-    Private _EMAIL As String
-
-    Private _ISACTIVE As System.Nullable(Of Boolean)
-
-    Private _CREATEDDATE As System.Nullable(Of Date)
-
-    Private _BANK_ACCOUNTs As EntitySet(Of BANK_ACCOUNT)
-
-    Private _BANK_TRANSACTIONs As EntitySet(Of BANK_TRANSACTION)
-
-    Private _USER_QA_TBs As EntitySet(Of USER_QA_TB)
-
-#Region "Extensibility Method Definitions"
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _USERID As Integer
+	
+	Private _USERNAME As String
+	
+	Private _FIRSTNAME As String
+	
+	Private _LASTNAME As String
+	
+	Private _PASSWORD As String
+	
+	Private _EMAIL As String
+	
+	Private _ISACTIVE As System.Nullable(Of Boolean)
+	
+	Private _CREATEDDATE As System.Nullable(Of Date)
+	
+	Private _BANK_ACCOUNTs As EntitySet(Of BANK_ACCOUNT)
+	
+	Private _BANK_TRANSACTIONs As EntitySet(Of BANK_TRANSACTION)
+	
+	Private _USER_QA_TBs As EntitySet(Of USER_QA_TB)
+	
+    #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
@@ -705,244 +702,245 @@ Partial Public Class USER_ACCOUNT
     End Sub
     Partial Private Sub OnCREATEDDATEChanged()
     End Sub
-#End Region
-
-    Public Sub New()
-        MyBase.New
-        Me._BANK_ACCOUNTs = New EntitySet(Of BANK_ACCOUNT)(AddressOf Me.attach_BANK_ACCOUNTs, AddressOf Me.detach_BANK_ACCOUNTs)
-        Me._BANK_TRANSACTIONs = New EntitySet(Of BANK_TRANSACTION)(AddressOf Me.attach_BANK_TRANSACTIONs, AddressOf Me.detach_BANK_TRANSACTIONs)
-        Me._USER_QA_TBs = New EntitySet(Of USER_QA_TB)(AddressOf Me.attach_USER_QA_TBs, AddressOf Me.detach_USER_QA_TBs)
-        OnCreated()
-    End Sub
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL", IsPrimaryKey:=True)>
-    Public Property USERID() As Integer
-        Get
-            Return Me._USERID
-        End Get
-        Set
-            If ((Me._USERID = Value) _
-                        = False) Then
-                Me.OnUSERIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._USERID = Value
-                Me.SendPropertyChanged("USERID")
-                Me.OnUSERIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERNAME", DbType:="VarChar(50)")>
-    Public Property USERNAME() As String
-        Get
-            Return Me._USERNAME
-        End Get
-        Set
-            If (String.Equals(Me._USERNAME, Value) = False) Then
-                Me.OnUSERNAMEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._USERNAME = Value
-                Me.SendPropertyChanged("USERNAME")
-                Me.OnUSERNAMEChanged()
-            End If
-        End Set
-    End Property
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FIRSTNAME", DbType:="VarChar(50)")>
-    Public Property FIRSTNAME() As String
-        Get
-            Return Me._FIRSTNAME
-        End Get
-        Set
-            If (String.Equals(Me._FIRSTNAME, Value) = False) Then
-                Me.OnFIRSTNAMEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._FIRSTNAME = Value
-                Me.SendPropertyChanged("FIRSTNAME")
-                Me.OnFIRSTNAMEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LASTNAME", DbType:="VarChar(50)")>
-    Public Property LASTNAME() As String
-        Get
-            Return Me._LASTNAME
-        End Get
-        Set
-            If (String.Equals(Me._LASTNAME, Value) = False) Then
-                Me.OnLASTNAMEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._LASTNAME = Value
-                Me.SendPropertyChanged("LASTNAME")
-                Me.OnLASTNAMEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PASSWORD", DbType:="VarChar(50)")>
-    Public Property PASSWORD() As String
-        Get
-            Return Me._PASSWORD
-        End Get
-        Set
-            If (String.Equals(Me._PASSWORD, Value) = False) Then
-                Me.OnPASSWORDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._PASSWORD = Value
-                Me.SendPropertyChanged("PASSWORD")
-                Me.OnPASSWORDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EMAIL", DbType:="VarChar(50)")>
-    Public Property EMAIL() As String
-        Get
-            Return Me._EMAIL
-        End Get
-        Set
-            If (String.Equals(Me._EMAIL, Value) = False) Then
-                Me.OnEMAILChanging(Value)
-                Me.SendPropertyChanging()
-                Me._EMAIL = Value
-                Me.SendPropertyChanged("EMAIL")
-                Me.OnEMAILChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ISACTIVE", DbType:="Bit")>
-    Public Property ISACTIVE() As System.Nullable(Of Boolean)
-        Get
-            Return Me._ISACTIVE
-        End Get
-        Set
-            If (Me._ISACTIVE.Equals(Value) = False) Then
-                Me.OnISACTIVEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ISACTIVE = Value
-                Me.SendPropertyChanged("ISACTIVE")
-                Me.OnISACTIVEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>
-    Public Property CREATEDDATE() As System.Nullable(Of Date)
-        Get
-            Return Me._CREATEDDATE
-        End Get
-        Set
-            If (Me._CREATEDDATE.Equals(Value) = False) Then
-                Me.OnCREATEDDATEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._CREATEDDATE = Value
-                Me.SendPropertyChanged("CREATEDDATE")
-                Me.OnCREATEDDATEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_ACCOUNT", Storage:="_BANK_ACCOUNTs", ThisKey:="USERID", OtherKey:="USERID")>
-    Public Property BANK_ACCOUNTs() As EntitySet(Of BANK_ACCOUNT)
-        Get
-            Return Me._BANK_ACCOUNTs
-        End Get
-        Set
-            Me._BANK_ACCOUNTs.Assign(Value)
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_TRANSACTION", Storage:="_BANK_TRANSACTIONs", ThisKey:="USERID", OtherKey:="USERID")>
-    Public Property BANK_TRANSACTIONs() As EntitySet(Of BANK_TRANSACTION)
-        Get
-            Return Me._BANK_TRANSACTIONs
-        End Get
-        Set
-            Me._BANK_TRANSACTIONs.Assign(Value)
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_USER_QA_TB", Storage:="_USER_QA_TBs", ThisKey:="USERID", OtherKey:="USERID")>
-    Public Property USER_QA_TBs() As EntitySet(Of USER_QA_TB)
-        Get
-            Return Me._USER_QA_TBs
-        End Get
-        Set
-            Me._USER_QA_TBs.Assign(Value)
-        End Set
-    End Property
-
-    Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-
-    Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
-    Protected Overridable Sub SendPropertyChanging()
-        If ((Me.PropertyChangingEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-        End If
-    End Sub
-
-    Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-        If ((Me.PropertyChangedEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-        End If
-    End Sub
-
-    Private Sub attach_BANK_ACCOUNTs(ByVal entity As BANK_ACCOUNT)
-        Me.SendPropertyChanging()
-        entity.USER_ACCOUNT = Me
-    End Sub
-
-    Private Sub detach_BANK_ACCOUNTs(ByVal entity As BANK_ACCOUNT)
-        Me.SendPropertyChanging()
-        entity.USER_ACCOUNT = Nothing
-    End Sub
-
-    Private Sub attach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
-        Me.SendPropertyChanging()
-        entity.USER_ACCOUNT = Me
-    End Sub
-
-    Private Sub detach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
-        Me.SendPropertyChanging()
-        entity.USER_ACCOUNT = Nothing
-    End Sub
-
-    Private Sub attach_USER_QA_TBs(ByVal entity As USER_QA_TB)
-        Me.SendPropertyChanging()
-        entity.USER_ACCOUNT = Me
-    End Sub
-
-    Private Sub detach_USER_QA_TBs(ByVal entity As USER_QA_TB)
-        Me.SendPropertyChanging()
-        entity.USER_ACCOUNT = Nothing
-    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._BANK_ACCOUNTs = New EntitySet(Of BANK_ACCOUNT)(AddressOf Me.attach_BANK_ACCOUNTs, AddressOf Me.detach_BANK_ACCOUNTs)
+		Me._BANK_TRANSACTIONs = New EntitySet(Of BANK_TRANSACTION)(AddressOf Me.attach_BANK_TRANSACTIONs, AddressOf Me.detach_BANK_TRANSACTIONs)
+		Me._USER_QA_TBs = New EntitySet(Of USER_QA_TB)(AddressOf Me.attach_USER_QA_TBs, AddressOf Me.detach_USER_QA_TBs)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property USERID() As Integer
+		Get
+			Return Me._USERID
+		End Get
+		Set
+			If ((Me._USERID = value)  _
+						= false) Then
+				Me.OnUSERIDChanging(value)
+				Me.SendPropertyChanging
+				Me._USERID = value
+				Me.SendPropertyChanged("USERID")
+				Me.OnUSERIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERNAME", DbType:="VarChar(50)")>  _
+	Public Property USERNAME() As String
+		Get
+			Return Me._USERNAME
+		End Get
+		Set
+			If (String.Equals(Me._USERNAME, value) = false) Then
+				Me.OnUSERNAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._USERNAME = value
+				Me.SendPropertyChanged("USERNAME")
+				Me.OnUSERNAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_FIRSTNAME", DbType:="VarChar(50)")>  _
+	Public Property FIRSTNAME() As String
+		Get
+			Return Me._FIRSTNAME
+		End Get
+		Set
+			If (String.Equals(Me._FIRSTNAME, value) = false) Then
+				Me.OnFIRSTNAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._FIRSTNAME = value
+				Me.SendPropertyChanged("FIRSTNAME")
+				Me.OnFIRSTNAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_LASTNAME", DbType:="VarChar(50)")>  _
+	Public Property LASTNAME() As String
+		Get
+			Return Me._LASTNAME
+		End Get
+		Set
+			If (String.Equals(Me._LASTNAME, value) = false) Then
+				Me.OnLASTNAMEChanging(value)
+				Me.SendPropertyChanging
+				Me._LASTNAME = value
+				Me.SendPropertyChanged("LASTNAME")
+				Me.OnLASTNAMEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PASSWORD", DbType:="VarChar(50)")>  _
+	Public Property PASSWORD() As String
+		Get
+			Return Me._PASSWORD
+		End Get
+		Set
+			If (String.Equals(Me._PASSWORD, value) = false) Then
+				Me.OnPASSWORDChanging(value)
+				Me.SendPropertyChanging
+				Me._PASSWORD = value
+				Me.SendPropertyChanged("PASSWORD")
+				Me.OnPASSWORDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_EMAIL", DbType:="VarChar(50)")>  _
+	Public Property EMAIL() As String
+		Get
+			Return Me._EMAIL
+		End Get
+		Set
+			If (String.Equals(Me._EMAIL, value) = false) Then
+				Me.OnEMAILChanging(value)
+				Me.SendPropertyChanging
+				Me._EMAIL = value
+				Me.SendPropertyChanged("EMAIL")
+				Me.OnEMAILChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ISACTIVE", DbType:="Bit")>  _
+	Public Property ISACTIVE() As System.Nullable(Of Boolean)
+		Get
+			Return Me._ISACTIVE
+		End Get
+		Set
+			If (Me._ISACTIVE.Equals(value) = false) Then
+				Me.OnISACTIVEChanging(value)
+				Me.SendPropertyChanging
+				Me._ISACTIVE = value
+				Me.SendPropertyChanged("ISACTIVE")
+				Me.OnISACTIVEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>  _
+	Public Property CREATEDDATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATEDDATE
+		End Get
+		Set
+			If (Me._CREATEDDATE.Equals(value) = false) Then
+				Me.OnCREATEDDATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATEDDATE = value
+				Me.SendPropertyChanged("CREATEDDATE")
+				Me.OnCREATEDDATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_ACCOUNT", Storage:="_BANK_ACCOUNTs", ThisKey:="USERID", OtherKey:="USERID")>  _
+	Public Property BANK_ACCOUNTs() As EntitySet(Of BANK_ACCOUNT)
+		Get
+			Return Me._BANK_ACCOUNTs
+		End Get
+		Set
+			Me._BANK_ACCOUNTs.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_BANK_TRANSACTION", Storage:="_BANK_TRANSACTIONs", ThisKey:="USERID", OtherKey:="USERID")>  _
+	Public Property BANK_TRANSACTIONs() As EntitySet(Of BANK_TRANSACTION)
+		Get
+			Return Me._BANK_TRANSACTIONs
+		End Get
+		Set
+			Me._BANK_TRANSACTIONs.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_USER_QA_TB", Storage:="_USER_QA_TBs", ThisKey:="USERID", OtherKey:="USERID")>  _
+	Public Property USER_QA_TBs() As EntitySet(Of USER_QA_TB)
+		Get
+			Return Me._USER_QA_TBs
+		End Get
+		Set
+			Me._USER_QA_TBs.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_BANK_ACCOUNTs(ByVal entity As BANK_ACCOUNT)
+		Me.SendPropertyChanging
+		entity.USER_ACCOUNT = Me
+	End Sub
+	
+	Private Sub detach_BANK_ACCOUNTs(ByVal entity As BANK_ACCOUNT)
+		Me.SendPropertyChanging
+		entity.USER_ACCOUNT = Nothing
+	End Sub
+	
+	Private Sub attach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
+		Me.SendPropertyChanging
+		entity.USER_ACCOUNT = Me
+	End Sub
+	
+	Private Sub detach_BANK_TRANSACTIONs(ByVal entity As BANK_TRANSACTION)
+		Me.SendPropertyChanging
+		entity.USER_ACCOUNT = Nothing
+	End Sub
+	
+	Private Sub attach_USER_QA_TBs(ByVal entity As USER_QA_TB)
+		Me.SendPropertyChanging
+		entity.USER_ACCOUNT = Me
+	End Sub
+	
+	Private Sub detach_USER_QA_TBs(ByVal entity As USER_QA_TB)
+		Me.SendPropertyChanging
+		entity.USER_ACCOUNT = Nothing
+	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USER_QA_TB")>
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USER_QA_TB")>  _
 Partial Public Class USER_QA_TB
-    Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-
-    Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-
-    Private _ID As Integer
-
-    Private _USERID As Integer
-
-    Private _QUESTIONID As Integer
-
-    Private _ANSWER As String
-
-    Private _CREATEDDATE As System.Nullable(Of Date)
-
-    Private _USER_ACCOUNT As EntityRef(Of USER_ACCOUNT)
-
-    Private _USER_QUSTN_LST As EntityRef(Of USER_QUSTN_LST)
-
-#Region "Extensibility Method Definitions"
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ID As Integer
+	
+	Private _USERID As Integer
+	
+	Private _QUESTIONID As Integer
+	
+	Private _ANSWER As String
+	
+	Private _CREATEDDATE As System.Nullable(Of Date)
+	
+	Private _USER_ACCOUNT As EntityRef(Of USER_ACCOUNT)
+	
+	Private _USER_QUSTN_LST As EntityRef(Of USER_QUSTN_LST)
+	
+    #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
@@ -969,196 +967,194 @@ Partial Public Class USER_QA_TB
     End Sub
     Partial Private Sub OnCREATEDDATEChanged()
     End Sub
-#End Region
-
-    Public Sub New()
-        MyBase.New
-        Me._USER_ACCOUNT = CType(Nothing, EntityRef(Of USER_ACCOUNT))
-        Me._USER_QUSTN_LST = CType(Nothing, EntityRef(Of USER_QUSTN_LST))
-        OnCreated()
-    End Sub
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", DbType:="Int NOT NULL", IsPrimaryKey:=True)>
-    Public Property ID() As Integer
-        Get
-            Return Me._ID
-        End Get
-        Set
-            If ((Me._ID = Value) _
-                        = False) Then
-                Me.OnIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ID = Value
-                Me.SendPropertyChanged("ID")
-                Me.OnIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL")>
-    Public Property USERID() As Integer
-        Get
-            Return Me._USERID
-        End Get
-        Set
-            If ((Me._USERID = Value) _
-                        = False) Then
-                If Me._USER_ACCOUNT.HasLoadedOrAssignedValue Then
-                    Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-                End If
-                Me.OnUSERIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._USERID = Value
-                Me.SendPropertyChanged("USERID")
-                Me.OnUSERIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QUESTIONID", DbType:="Int NOT NULL")>
-    Public Property QUESTIONID() As Integer
-        Get
-            Return Me._QUESTIONID
-        End Get
-        Set
-            If ((Me._QUESTIONID = Value) _
-                        = False) Then
-                If Me._USER_QUSTN_LST.HasLoadedOrAssignedValue Then
-                    Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-                End If
-                Me.OnQUESTIONIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._QUESTIONID = Value
-                Me.SendPropertyChanged("QUESTIONID")
-                Me.OnQUESTIONIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ANSWER", DbType:="VarChar(50)")>
-    Public Property ANSWER() As String
-        Get
-            Return Me._ANSWER
-        End Get
-        Set
-            If (String.Equals(Me._ANSWER, Value) = False) Then
-                Me.OnANSWERChanging(Value)
-                Me.SendPropertyChanging()
-                Me._ANSWER = Value
-                Me.SendPropertyChanged("ANSWER")
-                Me.OnANSWERChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>
-    Public Property CREATEDDATE() As System.Nullable(Of Date)
-        Get
-            Return Me._CREATEDDATE
-        End Get
-        Set
-            If (Me._CREATEDDATE.Equals(Value) = False) Then
-                Me.OnCREATEDDATEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._CREATEDDATE = Value
-                Me.SendPropertyChanged("CREATEDDATE")
-                Me.OnCREATEDDATEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_USER_QA_TB", Storage:="_USER_ACCOUNT", ThisKey:="USERID", OtherKey:="USERID", IsForeignKey:=True)>
-    Public Property USER_ACCOUNT() As USER_ACCOUNT
-        Get
-            Return Me._USER_ACCOUNT.Entity
-        End Get
-        Set
-            Dim previousValue As USER_ACCOUNT = Me._USER_ACCOUNT.Entity
-            If ((Object.Equals(previousValue, Value) = False) _
-                        OrElse (Me._USER_ACCOUNT.HasLoadedOrAssignedValue = False)) Then
-                Me.SendPropertyChanging()
-
-                If ((previousValue Is Nothing) _
-                            = False) Then
-                    Me._USER_ACCOUNT.Entity = Nothing
-                    previousValue.USER_QA_TBs.Remove(Me)
-                End If
-                Me._USER_ACCOUNT.Entity = Value
-                If ((Value Is Nothing) _
-                            = False) Then
-                    Value.USER_QA_TBs.Add(Me)
-                    Me._USERID = Value.USERID
-                Else
-                    Me._USERID = CType(Nothing, Integer)
-                End If
-                Me.SendPropertyChanged("USER_ACCOUNT")
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_QUSTN_LST_USER_QA_TB", Storage:="_USER_QUSTN_LST", ThisKey:="QUESTIONID", OtherKey:="QUESTIONID", IsForeignKey:=True)>
-    Public Property USER_QUSTN_LST() As USER_QUSTN_LST
-        Get
-            Return Me._USER_QUSTN_LST.Entity
-        End Get
-        Set
-            Dim previousValue As USER_QUSTN_LST = Me._USER_QUSTN_LST.Entity
-            If ((Object.Equals(previousValue, Value) = False) _
-                        OrElse (Me._USER_QUSTN_LST.HasLoadedOrAssignedValue = False)) Then
-                Me.SendPropertyChanging()
-
-                If ((previousValue Is Nothing) _
-                            = False) Then
-                    Me._USER_QUSTN_LST.Entity = Nothing
-                    previousValue.USER_QA_TBs.Remove(Me)
-                End If
-                Me._USER_QUSTN_LST.Entity = Value
-                If ((Value Is Nothing) _
-                            = False) Then
-                    Value.USER_QA_TBs.Add(Me)
-                    Me._QUESTIONID = Value.QUESTIONID
-                Else
-                    Me._QUESTIONID = CType(Nothing, Integer)
-                End If
-                Me.SendPropertyChanged("USER_QUSTN_LST")
-            End If
-        End Set
-    End Property
-
-    Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-
-    Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
-    Protected Overridable Sub SendPropertyChanging()
-        If ((Me.PropertyChangingEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-        End If
-    End Sub
-
-    Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-        If ((Me.PropertyChangedEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-        End If
-    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._USER_ACCOUNT = CType(Nothing, EntityRef(Of USER_ACCOUNT))
+		Me._USER_QUSTN_LST = CType(Nothing, EntityRef(Of USER_QUSTN_LST))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property ID() As Integer
+		Get
+			Return Me._ID
+		End Get
+		Set
+			If ((Me._ID = value)  _
+						= false) Then
+				Me.OnIDChanging(value)
+				Me.SendPropertyChanging
+				Me._ID = value
+				Me.SendPropertyChanged("ID")
+				Me.OnIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USERID", DbType:="Int NOT NULL")>  _
+	Public Property USERID() As Integer
+		Get
+			Return Me._USERID
+		End Get
+		Set
+			If ((Me._USERID = value)  _
+						= false) Then
+				If Me._USER_ACCOUNT.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUSERIDChanging(value)
+				Me.SendPropertyChanging
+				Me._USERID = value
+				Me.SendPropertyChanged("USERID")
+				Me.OnUSERIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QUESTIONID", DbType:="Int NOT NULL")>  _
+	Public Property QUESTIONID() As Integer
+		Get
+			Return Me._QUESTIONID
+		End Get
+		Set
+			If ((Me._QUESTIONID = value)  _
+						= false) Then
+				If Me._USER_QUSTN_LST.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnQUESTIONIDChanging(value)
+				Me.SendPropertyChanging
+				Me._QUESTIONID = value
+				Me.SendPropertyChanged("QUESTIONID")
+				Me.OnQUESTIONIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ANSWER", DbType:="VarChar(50)")>  _
+	Public Property ANSWER() As String
+		Get
+			Return Me._ANSWER
+		End Get
+		Set
+			If (String.Equals(Me._ANSWER, value) = false) Then
+				Me.OnANSWERChanging(value)
+				Me.SendPropertyChanging
+				Me._ANSWER = value
+				Me.SendPropertyChanged("ANSWER")
+				Me.OnANSWERChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>  _
+	Public Property CREATEDDATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATEDDATE
+		End Get
+		Set
+			If (Me._CREATEDDATE.Equals(value) = false) Then
+				Me.OnCREATEDDATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATEDDATE = value
+				Me.SendPropertyChanged("CREATEDDATE")
+				Me.OnCREATEDDATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_ACCOUNT_USER_QA_TB", Storage:="_USER_ACCOUNT", ThisKey:="USERID", OtherKey:="USERID", IsForeignKey:=true)>  _
+	Public Property USER_ACCOUNT() As USER_ACCOUNT
+		Get
+			Return Me._USER_ACCOUNT.Entity
+		End Get
+		Set
+			Dim previousValue As USER_ACCOUNT = Me._USER_ACCOUNT.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._USER_ACCOUNT.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._USER_ACCOUNT.Entity = Nothing
+					previousValue.USER_QA_TBs.Remove(Me)
+				End If
+				Me._USER_ACCOUNT.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.USER_QA_TBs.Add(Me)
+					Me._USERID = value.USERID
+				Else
+					Me._USERID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("USER_ACCOUNT")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_QUSTN_LST_USER_QA_TB", Storage:="_USER_QUSTN_LST", ThisKey:="QUESTIONID", OtherKey:="QUESTIONID", IsForeignKey:=true)>  _
+	Public Property USER_QUSTN_LST() As USER_QUSTN_LST
+		Get
+			Return Me._USER_QUSTN_LST.Entity
+		End Get
+		Set
+			Dim previousValue As USER_QUSTN_LST = Me._USER_QUSTN_LST.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._USER_QUSTN_LST.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._USER_QUSTN_LST.Entity = Nothing
+					previousValue.USER_QA_TBs.Remove(Me)
+				End If
+				Me._USER_QUSTN_LST.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.USER_QA_TBs.Add(Me)
+					Me._QUESTIONID = value.QUESTIONID
+				Else
+					Me._QUESTIONID = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("USER_QUSTN_LST")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USER_QUSTN_LST")>
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USER_QUSTN_LST")>  _
 Partial Public Class USER_QUSTN_LST
-    Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-
-    Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-
-    Private _QUESTIONID As Integer
-
-    Private _QUESTION As String
-
-    Private _CREATEDDATE As System.Nullable(Of Date)
-
-    Private _USER_QA_TBs As EntitySet(Of USER_QA_TB)
-
-#Region "Extensibility Method Definitions"
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _QUESTIONID As Integer
+	
+	Private _QUESTION As String
+	
+	Private _CREATEDDATE As System.Nullable(Of Date)
+	
+	Private _USER_QA_TBs As EntitySet(Of USER_QA_TB)
+	
+    #Region "Extensibility Method Definitions"
     Partial Private Sub OnLoaded()
     End Sub
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
@@ -1177,98 +1173,98 @@ Partial Public Class USER_QUSTN_LST
     End Sub
     Partial Private Sub OnCREATEDDATEChanged()
     End Sub
-#End Region
-
-    Public Sub New()
-        MyBase.New
-        Me._USER_QA_TBs = New EntitySet(Of USER_QA_TB)(AddressOf Me.attach_USER_QA_TBs, AddressOf Me.detach_USER_QA_TBs)
-        OnCreated()
-    End Sub
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QUESTIONID", DbType:="Int NOT NULL", IsPrimaryKey:=True)>
-    Public Property QUESTIONID() As Integer
-        Get
-            Return Me._QUESTIONID
-        End Get
-        Set
-            If ((Me._QUESTIONID = Value) _
-                        = False) Then
-                Me.OnQUESTIONIDChanging(Value)
-                Me.SendPropertyChanging()
-                Me._QUESTIONID = Value
-                Me.SendPropertyChanged("QUESTIONID")
-                Me.OnQUESTIONIDChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QUESTION", DbType:="VarChar(150)")>
-    Public Property QUESTION() As String
-        Get
-            Return Me._QUESTION
-        End Get
-        Set
-            If (String.Equals(Me._QUESTION, Value) = False) Then
-                Me.OnQUESTIONChanging(Value)
-                Me.SendPropertyChanging()
-                Me._QUESTION = Value
-                Me.SendPropertyChanged("QUESTION")
-                Me.OnQUESTIONChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>
-    Public Property CREATEDDATE() As System.Nullable(Of Date)
-        Get
-            Return Me._CREATEDDATE
-        End Get
-        Set
-            If (Me._CREATEDDATE.Equals(Value) = False) Then
-                Me.OnCREATEDDATEChanging(Value)
-                Me.SendPropertyChanging()
-                Me._CREATEDDATE = Value
-                Me.SendPropertyChanged("CREATEDDATE")
-                Me.OnCREATEDDATEChanged()
-            End If
-        End Set
-    End Property
-
-    <Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_QUSTN_LST_USER_QA_TB", Storage:="_USER_QA_TBs", ThisKey:="QUESTIONID", OtherKey:="QUESTIONID")>
-    Public Property USER_QA_TBs() As EntitySet(Of USER_QA_TB)
-        Get
-            Return Me._USER_QA_TBs
-        End Get
-        Set
-            Me._USER_QA_TBs.Assign(Value)
-        End Set
-    End Property
-
-    Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-
-    Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-
-    Protected Overridable Sub SendPropertyChanging()
-        If ((Me.PropertyChangingEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-        End If
-    End Sub
-
-    Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-        If ((Me.PropertyChangedEvent Is Nothing) _
-                    = False) Then
-            RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-        End If
-    End Sub
-
-    Private Sub attach_USER_QA_TBs(ByVal entity As USER_QA_TB)
-        Me.SendPropertyChanging()
-        entity.USER_QUSTN_LST = Me
-    End Sub
-
-    Private Sub detach_USER_QA_TBs(ByVal entity As USER_QA_TB)
-        Me.SendPropertyChanging()
-        entity.USER_QUSTN_LST = Nothing
-    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._USER_QA_TBs = New EntitySet(Of USER_QA_TB)(AddressOf Me.attach_USER_QA_TBs, AddressOf Me.detach_USER_QA_TBs)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QUESTIONID", DbType:="Int NOT NULL", IsPrimaryKey:=true)>  _
+	Public Property QUESTIONID() As Integer
+		Get
+			Return Me._QUESTIONID
+		End Get
+		Set
+			If ((Me._QUESTIONID = value)  _
+						= false) Then
+				Me.OnQUESTIONIDChanging(value)
+				Me.SendPropertyChanging
+				Me._QUESTIONID = value
+				Me.SendPropertyChanged("QUESTIONID")
+				Me.OnQUESTIONIDChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_QUESTION", DbType:="VarChar(150)")>  _
+	Public Property QUESTION() As String
+		Get
+			Return Me._QUESTION
+		End Get
+		Set
+			If (String.Equals(Me._QUESTION, value) = false) Then
+				Me.OnQUESTIONChanging(value)
+				Me.SendPropertyChanging
+				Me._QUESTION = value
+				Me.SendPropertyChanged("QUESTION")
+				Me.OnQUESTIONChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATEDDATE", DbType:="DateTime")>  _
+	Public Property CREATEDDATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATEDDATE
+		End Get
+		Set
+			If (Me._CREATEDDATE.Equals(value) = false) Then
+				Me.OnCREATEDDATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATEDDATE = value
+				Me.SendPropertyChanged("CREATEDDATE")
+				Me.OnCREATEDDATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USER_QUSTN_LST_USER_QA_TB", Storage:="_USER_QA_TBs", ThisKey:="QUESTIONID", OtherKey:="QUESTIONID")>  _
+	Public Property USER_QA_TBs() As EntitySet(Of USER_QA_TB)
+		Get
+			Return Me._USER_QA_TBs
+		End Get
+		Set
+			Me._USER_QA_TBs.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_USER_QA_TBs(ByVal entity As USER_QA_TB)
+		Me.SendPropertyChanging
+		entity.USER_QUSTN_LST = Me
+	End Sub
+	
+	Private Sub detach_USER_QA_TBs(ByVal entity As USER_QA_TB)
+		Me.SendPropertyChanging
+		entity.USER_QUSTN_LST = Nothing
+	End Sub
 End Class

@@ -10,8 +10,8 @@ End Code
 			@Html.ValidationSummary(False, "", New With {.class = "text-danger"})
 			<div class="login-form" action="Login" method="post">
 				<label name="securityQuestion">@ViewData("securityQuestion")</label>
-				<input type="password" placeholder="password" name="password" />
-				<Button type="submit" value="Login" name="Login"> Login</Button>
+				<input type="password" placeholder="security answer" name="answer" />
+				<Button type="submit" value="Login" name="Login">Continue</Button>
 			</div>
 		</div>
 	End Using

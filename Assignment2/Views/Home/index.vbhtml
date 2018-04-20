@@ -1,6 +1,6 @@
 ﻿@ModelType Assignment2.USER_ACCOUNT
 @Code
-	ViewData("Title") = "Index"
+	ViewData("Title") = "Welcome - M.R Banking App"
 End Code
 <div class="login-page">
 	<h1 class="hometext">M.R Bank</h1>
